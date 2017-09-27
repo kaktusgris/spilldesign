@@ -13,7 +13,7 @@ public class Rotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		float rotateClockwise = Input.GetAxis ("Horizontal") * 1.5f;
+		float rotateClockwise = Input.GetAxis ("Horizontal") * 0.8f;
 
 		transform.Rotate (new Vector3 (0, rotateClockwise, 0));
 	}

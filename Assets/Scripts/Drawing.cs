@@ -6,14 +6,13 @@ public class Drawing : MonoBehaviour {
 
 	float x = 0.0f;
 	float y = 0.0f;
-	GL.crea
 
 	// Use this for initialization
 	void Start () {
 		
 	}
 
-	void coordinates () {
+	void Coordinates () {
 		x = Input.mousePosition.x;
 		y = Input.mousePosition.y;
 	}
@@ -21,7 +20,7 @@ public class Drawing : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
-			coordinates ();
+			Coordinates ();
 			Debug.Log (x + ", " + y);
 		}
 	}
