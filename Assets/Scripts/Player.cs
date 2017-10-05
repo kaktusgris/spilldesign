@@ -16,13 +16,4 @@ public class Player : MonoBehaviour {
 		pos.z = 0;
 		transform.position = pos;
 	}
-
-	void OnTriggerEnter(Collider other) 
-	{
-		if (other.gameObject.CompareTag ("Goal"))
-		{
-			other.gameObject.SetActive (false);
-			UnityEngine.SceneManagement.SceneManager.LoadScene ("Scene02");
-		}
-	}
 }
