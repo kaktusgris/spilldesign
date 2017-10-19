@@ -4,26 +4,58 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour {
 
-	float counter = 0;
-	Vector3 direction;
-	float movement;
+	public float length = 3;
+	public Vector3 direction = new Vector3 (0, 0, 1);
+	public float movementSpeed = 1f;
+	public float waitTime = 0f;
+
+	private float counter = 0;
+	private bool startDirection = true;
+	private bool moving = true;
 
 	// Use this for initialization
 	void Start () {
-		direction = new Vector3 (0, 1, 0);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		Vector3 pos = transform.position;
-		if (counter > 10) {
-			direction.y = -1;
-		} else if (counter < 0) {
-			direction.y = 1;
+		if (moving) {
+			StartCoroutine (movePlatform ());
+		}
+	}
+
+	IEnumerator movePlatform (){
+		// Changes the direction when the platform has reached the end
+		if (counter > length && startDirection) {
+			direction = direction * -1;
+			startDirection = false;
+			moving = false;
+			yield return new WaitForSeconds(waitTime);
+			moving = true;
+		} else if (counter < 0 && !startDirection) {
+			direction = direction * -1;
+			startDirection = true;
+			moving = false;
+			yield return new WaitForSeconds(waitTime);
+			moving = true;
 		}
 
-		movement = direction.y * Time.deltaTime;
-		counter += movement;
-		transform.position = new Vector3 (pos.x, pos.y + movement, pos.z);
+		float translation = movementSpeed * Time.deltaTime;
+		transform.Translate (direction * translation);
+		if (startDirection) {
+			counter += translation;
+		} else {
+			counter -= translation;
+		}
 	}
+		
+
+	/*void OnCollisionEnter(Collision collision) {
+		if (collision.gameObject.CompareTag("Player")) {
+			float d = Vector3.Distance (collision.gameObject.transform.position, transform.position);
+			if (true) {
+				Debug.Log(d);
+			}
+		}
+	}*/
 }
