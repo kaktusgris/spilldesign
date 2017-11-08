@@ -7,22 +7,16 @@ public class Player : MonoBehaviour {
 
 	bool PushedTop, PushedBottom, PushedLeft, PushedRight;
 	private bool debug = false;
-	private float yPos;
-	private Vector3 pos;
 
 	// Use this for initialization
 	void Start () {
-		yPos = transform.position.y;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (PushedTop && PushedBottom) {
 			Debug.Log ("Sqeezed!");
-		}
-		pos = transform.position;
-		pos.y = yPos;
-		transform.position = pos;
+		}	
 	}
 
 	void OnCollisionStay(Collision coll) {

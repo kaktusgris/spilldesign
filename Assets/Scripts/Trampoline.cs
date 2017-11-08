@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Trampoline : MonoBehaviour {
 
-    public Collision collision;
-    public bool bounce;
+	public int intensity = 10;
+
+    private Collision collision;
+    private bool bounce;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +17,9 @@ public class Trampoline : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (bounce){
-            collision.rigidbody.AddForce(Vector3.up * 10, ForceMode.Impulse);
+			//collision.rigidbody.AddForce(Vector3.up * 10, ForceMode.Impulse);
+			collision.rigidbody.AddForce(this.gameObject.transform.up * -intensity, ForceMode.Impulse);
+
             bounce = false;
         }
 	}

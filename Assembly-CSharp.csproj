@@ -51,10 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\GlobalGameState.cs" />
      <Compile Include="Assets\Scripts\Goal.cs" />
-     <Compile Include="Assets\Scripts\Platform.cs" />
+     <Compile Include="Assets\Scripts\Lift.cs" />
+     <Compile Include="Assets\Scripts\Pitfall.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Rotation.cs" />
+     <Compile Include="Assets\Scripts\Timer.cs" />
+     <Compile Include="Assets\Scripts\Trampoline.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
