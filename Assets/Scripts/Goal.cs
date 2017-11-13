@@ -18,8 +18,14 @@ public class Goal : MonoBehaviour {
 
     void OnCollisionEnter(Collision other){
         if (other.gameObject.CompareTag("Player")){
-            //other.gameObject.SetActive(false);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            other.gameObject.SetActive(false);
+
+			//Makes the goal "invisible"
+			Vector3 away = new Vector3 (0, 0, 100);
+			transform.position = away;
+
+            //First fades in a black screen and then loads next scene
+			StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In,SceneManager.GetActiveScene().buildIndex + 1));
         }
     }
 		

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
 	bool PushedTop, PushedBottom, PushedLeft, PushedRight;
-	private bool debug = false;
+	//private bool debug = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,12 +14,12 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (PushedTop && PushedBottom) {
-			Debug.Log ("Sqeezed!");
-		}	
+		if (Input.GetKey ("z") && Input.GetKey ("m") && SceneManager.GetActiveScene().buildIndex > 0) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+		}
 	}
 
-	void OnCollisionStay(Collision coll) {
+	/*void OnCollisionStay(Collision coll) {
 		if (coll.gameObject.tag == "MovingPlatform"	) {
 			//Check all points of contacts occuring on this object
 			for (int i = 0; i < coll.contacts.Length; i++) {
@@ -78,5 +78,5 @@ public class Player : MonoBehaviour {
 				}
 			}
 		}
-	}
+	} */
 }

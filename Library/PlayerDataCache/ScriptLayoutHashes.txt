@@ -1,4 +1,4 @@
-OSXStandalone
+WebGL
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9f07aaefd0255462bb6e4f9e5da6b2d4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -110,8 +110,10 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 fd476f259b4d9d34236196d4f6a1b7a0 Assembly-CSharp.dll:.Trampoline
+53dea919bf4f50c028dfd8f36ca949fd Assembly-CSharp.dll:.SceneFader
 e92e6983e4a573600f684b9d1faabc07 Assembly-CSharp.dll:.CameraController
-0d50533b5be9717fc17e770faa884fb4 Assembly-CSharp.dll:.Timer
+b2c94c7c7be1a3f079e9a75ae824d17f Assembly-CSharp.dll:.Background
+b3c783a57353e5f68bf06850c6a12c21 Assembly-CSharp.dll:.Timer
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
