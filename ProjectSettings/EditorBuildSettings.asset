@@ -21,11 +21,17 @@ EditorBuildSettings:
     path: Assets/Scenes/04Boost.unity
     guid: b25d67344ef4d46918084562ddc0ce46
   - enabled: 1
-    path: Assets/Scenes/05Boat.unity
+    path: Assets/Scenes/05Balance.unity
     guid: ab01d7cad98b8437a9f3ef8d334729c8
   - enabled: 1
     path: Assets/Scenes/06Roof.unity
     guid: 705c1d255e7f4444896429ab465e2f2c
   - enabled: 1
-    path: Assets/Scenes/07TestOver.unity
+    path: Assets/Scenes/07Labyrinth.unity
+    guid: 1c8d6d16aaf6b4140bf0292e92f23f47
+  - enabled: 1
+    path: Assets/Scenes/08Final.unity
+    guid: 10da5efc0ddd049ff87d62ad1ab612c1
+  - enabled: 1
+    path: Assets/Scenes/09GameOver.unity
     guid: 265f6c3fcfff94e48bbe249e06cd9e3d

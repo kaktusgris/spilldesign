@@ -8,6 +8,8 @@ TagManager:
   - MovingPlatform
   - Wall
   - Start
+  - Continue
+  - Death
   layers:
   - Default
   - TransparentFX
