@@ -8,19 +8,31 @@ public class SceneFader : MonoBehaviour {
 	public Text fadeOutUIText;
 	public float fadeSpeed = 0.8f; 
 	public float fadeWait = 0.0f;
-	private static bool[] scenes = { false, false, false, false, false, false, false, false};
+	//one false for each level to keep track of which texts have been displayed
+	private static bool[] scenes = { false, false, false, false, false, false, false, false, false, false};
+	public bool deathScreen = false;
 	public enum FadeDirection
 	{
 		In, //Alpha = 1
 		Out // Alpha = 0
 	}
 	#endregion
+
 	#region MONOBHEAVIOR
 	void OnEnable()
 	{
+		// Sets text on death screen to a random from list
+		if (deathScreen) {
+			int r = Random.Range (0, deathFlares.Length - 1);
+			fadeOutUIText.text = deathFlares [r];
+		}
+
 		if (!scenes [SceneManager.GetActiveScene ().buildIndex - 1]) {
 			StartCoroutine (Fade (FadeDirection.Out));
-		} else {
+		} else if (deathScreen){
+			StartCoroutine (Fade (FadeDirection.Out));
+		}
+		else {
 			fadeOutUIImage.color = new Color (fadeOutUIImage.color.r,fadeOutUIImage.color.g, fadeOutUIImage.color.b, 0);
 			fadeOutUIText.color = new Color (fadeOutUIText.color.r,fadeOutUIText.color.g, fadeOutUIText.color.b, 0);
 		}
@@ -63,5 +75,29 @@ public class SceneFader : MonoBehaviour {
 		fadeOutUIText.color = new Color (fadeOutUIText.color.r,fadeOutUIText.color.g, fadeOutUIText.color.b, alpha);
 		alpha += Time.deltaTime * (1.0f / fadeSpeed) * ((fadeDirection == FadeDirection.Out)? -1 : 1) ;
 	}
+	#endregion
+	#region text
+	string[] deathFlares =  {
+		"Didn't think so",
+		"As expected",
+		"What a failure",
+		"You lost",
+		"What a surprise..",
+		"Can you try harder?",
+		"Pathetic",
+		"XD",
+		"Give up",
+		"Oh, you lost?",
+		"Why are you still trying?",
+		"Stop trying and start doing",
+		"Did you do it? No",
+		"Why are you still here?",
+		"And I almost had my hopes in you",
+		"Like you could be the one",
+		"Please.",
+		"You died",
+		"Dead again",
+		"Need to try harder"
+	};
 	#endregion
 }

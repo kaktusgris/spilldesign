@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.88235295, g: 0.88235295, b: 0.88235295, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -223,13 +223,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: <DeathText>
 --- !u!114 &114346064912903932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -304,7 +304,8 @@ MonoBehaviour:
   fadeOutUIImage: {fileID: 114491201108304572}
   fadeOutUIText: {fileID: 114310470604549720}
   fadeSpeed: 0.8
-  fadeWait: 0
+  fadeWait: 1
+  deathScreen: 1
 --- !u!114 &114604974724450092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,6 +354,7 @@ MonoBehaviour:
   fadeOutUIText: {fileID: 114125323723644560}
   fadeSpeed: 0.8
   fadeWait: 4
+  deathScreen: 0
 --- !u!222 &222133266301435344
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -475,10 +477,10 @@ RectTransform:
   m_Father: {fileID: 224540262934767326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224851202459640304
 RectTransform:

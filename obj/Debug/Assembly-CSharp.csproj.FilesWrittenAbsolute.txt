@@ -21,3 +21,10 @@
 /Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/UnityEngine.UIAutomation.dll
+/Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.dll
+/Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/UnityEngine.SpatialTracking.dll
+/Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/UnityEngine.Purchasing.dll
+/Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/Unity.Cecil.dll
+/Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/Unity.Cecil.Pdb.dll
+/Users/marton/OneDrive/NTNU/Semester7/Unity/spilldesign/Temp/bin/Debug/Unity.Cecil.Mdb.dll
