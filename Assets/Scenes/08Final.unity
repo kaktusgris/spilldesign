@@ -2466,6 +2466,17 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114125323723644560, guid: 80b2333a1b6ce4a049d5ed8046f53f9d,
+        type: 2}
+      propertyPath: m_Text
+      value: 'WOW!
+
+        You may actually do this.
+
+        I''m rooting for you, we can do this.
+
+        I have been in here for so long.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80b2333a1b6ce4a049d5ed8046f53f9d, type: 2}
   m_IsPrefabParent: 0

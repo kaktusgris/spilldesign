@@ -885,6 +885,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114125323723644560, guid: 80b2333a1b6ce4a049d5ed8046f53f9d,
+        type: 2}
+      propertyPath: m_Text
+      value: 'You made it?
+
+        Not that I am impressed, most of them do.
+
+
+        Why don''t you continue to "impress" me?'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80b2333a1b6ce4a049d5ed8046f53f9d, type: 2}
   m_IsPrefabParent: 0
