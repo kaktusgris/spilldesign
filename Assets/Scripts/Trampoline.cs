@@ -9,10 +9,13 @@ public class Trampoline : MonoBehaviour {
     private Collision collision;
     private bool bounce;
 
-	// Use this for initialization
-	void Start () {
+    FMOD.Studio.EventInstance jumpEv;
+
+    // Use this for initialization
+    void Start () {
         bounce = false;
-	}
+        jumpEv = FMODUnity.RuntimeManager.CreateInstance("event:/Jump");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,6 +29,7 @@ public class Trampoline : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision){
         if (collision.gameObject.CompareTag("Player")) {
+            jumpEv.start();
             bounce = true;
             this.collision = collision;
         }
