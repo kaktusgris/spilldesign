@@ -753,6 +753,7 @@ GameObject:
   - component: {fileID: 677851967}
   - component: {fileID: 677851966}
   - component: {fileID: 677851971}
+  - component: {fileID: 677851972}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -842,6 +843,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 866222033}
   background: {fileID: 629684738}
+--- !u!114 &677851972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 677851965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1001 &753403296
 Prefab:
   m_ObjectHideFlags: 0
@@ -1739,13 +1752,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114125323723644560, guid: 80b2333a1b6ce4a049d5ed8046f53f9d,
-        type: 2}
-      propertyPath: m_Text
-      value: 'You seem persistent on making this trial.
-
-        Careful or I might start to get my hopes on you.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80b2333a1b6ce4a049d5ed8046f53f9d, type: 2}

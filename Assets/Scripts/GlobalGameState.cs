@@ -8,19 +8,13 @@ public class GlobalGameState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 	}
 
 	// Update is called once per frame
 	void Update() {
-
 	}
 
-	void OnMouseDown() {
-		Play ();
-	}
-
-	void Play () {
+	public void Play () {
 		startTime = Time.time;
 		UnityEngine.SceneManagement.SceneManager.LoadScene("01Intro");
 	}

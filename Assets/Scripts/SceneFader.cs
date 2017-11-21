@@ -6,11 +6,14 @@ public class SceneFader : MonoBehaviour {
 	#region FIELDS
 	public RawImage fadeOutUIImage;
 	public Text fadeOutUIText;
+	public Text nextText;
 	public float fadeSpeed = 0.8f; 
 	public float fadeWait = 0.0f;
-	//one false for each level to keep track of which texts have been displayed
-	private static bool[] scenes = { false, false, false, false, false, false, false, false, false, false};
+	//one true for each level to keep track of which texts have been displayed
+	private static bool[] scenes = { true, true, true, true, true, true, true, true, true, true };
 	public bool deathScreen = false;
+	private bool closeText = false;
+	private int r = 0; // Random nuber used for death flares
 	public enum FadeDirection
 	{
 		In, //Alpha = 1
@@ -21,22 +24,38 @@ public class SceneFader : MonoBehaviour {
 	#region MONOBHEAVIOR
 	void OnEnable()
 	{
-		// Sets text on death screen to a random from list
-		if (deathScreen) {
-			int r = Random.Range (0, deathFlares.Length - 1);
-			fadeOutUIText.text = deathFlares [r];
-		}
+		bool showText = scenes [SceneManager.GetActiveScene ().buildIndex - 1];
 
-		if (!scenes [SceneManager.GetActiveScene ().buildIndex - 1]) {
-			StartCoroutine (Fade (FadeDirection.Out));
-		} else if (deathScreen){
-			StartCoroutine (Fade (FadeDirection.Out));
+		if (deathScreen) {
+			// Just removes death screen (if the story is to be shown)
+			if (showText) {
+				fadeOutUIImage.color = new Color (fadeOutUIImage.color.r,fadeOutUIImage.color.g, fadeOutUIImage.color.b, 0);
+				fadeOutUIText.color = new Color (fadeOutUIText.color.r,fadeOutUIText.color.g, fadeOutUIText.color.b, 0);
+				nextText.color = new Color (nextText.color.r,nextText.color.g, nextText.color.b, 0);
+			// Sets text on death screen to a random from list
+			} else {
+				r = Random.Range (0, deathFlares.Length - 1);
+				fadeOutUIText.text = deathFlares [r];
+				StartCoroutine (Fade (FadeDirection.Out));
+			}
 		}
+		// Fades text if it should be shown
+		else if (showText) {
+			StartCoroutine (Fade (FadeDirection.Out));
+		} 
+		// Just removes story (if it has been shown already)
 		else {
 			fadeOutUIImage.color = new Color (fadeOutUIImage.color.r,fadeOutUIImage.color.g, fadeOutUIImage.color.b, 0);
 			fadeOutUIText.color = new Color (fadeOutUIText.color.r,fadeOutUIText.color.g, fadeOutUIText.color.b, 0);
+			nextText.color = new Color (nextText.color.r,nextText.color.g, nextText.color.b, 0);
 		}
 	}
+	void Update() {
+		if (Input.GetKey("space")) {
+			closeText = true;
+		}
+	}
+
 	#endregion
 	#region FADE
 	private IEnumerator Fade(FadeDirection fadeDirection) 
@@ -44,7 +63,10 @@ public class SceneFader : MonoBehaviour {
 		float alpha = (fadeDirection == FadeDirection.Out)? 1 : 0;
 		float fadeEndValue = (fadeDirection == FadeDirection.Out)? 0 : 1;
 		if (fadeDirection == FadeDirection.Out) {
+			
 			yield return new WaitForSeconds (fadeWait);
+			yield return new WaitUntil(() => closeText);
+
 			while (alpha >= fadeEndValue)
 			{
 				SetColorImage (ref alpha, fadeDirection);
@@ -52,7 +74,7 @@ public class SceneFader : MonoBehaviour {
 			}
 			fadeOutUIImage.enabled = false;
 			fadeOutUIText.enabled = false;
-			scenes [SceneManager.GetActiveScene ().buildIndex - 1] = true;
+			scenes [SceneManager.GetActiveScene ().buildIndex - 1] = false;
 		} else {
 			fadeOutUIImage.enabled = true; 
 			while (alpha <= fadeEndValue)
@@ -73,6 +95,7 @@ public class SceneFader : MonoBehaviour {
 	{
 		fadeOutUIImage.color = new Color (fadeOutUIImage.color.r,fadeOutUIImage.color.g, fadeOutUIImage.color.b, alpha);
 		fadeOutUIText.color = new Color (fadeOutUIText.color.r,fadeOutUIText.color.g, fadeOutUIText.color.b, alpha);
+		nextText.color = new Color (nextText.color.r,nextText.color.g, nextText.color.b, alpha);
 		alpha += Time.deltaTime * (1.0f / fadeSpeed) * ((fadeDirection == FadeDirection.Out)? -1 : 1) ;
 	}
 	#endregion

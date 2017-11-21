@@ -44,7 +44,6 @@ public class Player : MonoBehaviour {
 		if (coll.gameObject.CompareTag("Wall") || coll.gameObject.CompareTag("MovingPlatform")){
 			ballVelocity = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
 			float rollingParam = Mathf.Log(ballVelocity*5)/4;
-			Debug.Log(rollingParam);
 			rollingIn.setValue(rollingParam);
 		}
 	}
