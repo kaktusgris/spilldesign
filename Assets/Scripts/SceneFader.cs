@@ -41,6 +41,7 @@ public class SceneFader : MonoBehaviour {
 		}
 		// Fades text if it should be shown
 		else if (showText) {
+			fadeOutUIText.text = story [SceneManager.GetActiveScene ().buildIndex - 1];
 			StartCoroutine (Fade (FadeDirection.Out));
 		} 
 		// Just removes story (if it has been shown already)
@@ -101,26 +102,36 @@ public class SceneFader : MonoBehaviour {
 	#endregion
 	#region text
 	string[] deathFlares =  {
-		"Didn't think so",
-		"As expected",
-		"What a failure",
-		"You lost",
-		"What a surprise..",
+		"Didn't think so.",
+		"As expected.",
+		"You failed.",
+		"You lost.",
+		"What a surprise...",
 		"Can you try harder?",
-		"Pathetic",
-		"XD",
-		"Give up",
+		"Well that was entertaining.",
+		"I think you can do better. MUCH better",
 		"Oh, you lost?",
-		"Why are you still trying?",
-		"Stop trying and start doing",
-		"Did you do it? No",
+		"Oh, you're still here?",
+		"Impressive, let's try winning this time.",
+		"That was... sad.",
 		"Why are you still here?",
-		"And I almost had my hopes in you",
-		"Like you could be the one",
-		"Please.",
-		"You died",
-		"Dead again",
-		"Need to try harder"
+		"And I almost had faith in you.",
+		"Looks like you're not the one.",
+		"Oh, please.",
+		"You died.",
+		"Dead again.",
+		"Try harder this time."
+	};
+
+	string[] story = {
+		"Oh... A new challenger, huh?\nYou must be here for the trial.\n\nWell, let's see what you're made of.",
+		"Heh, don't pat yourself on the back yet.\nThat was the easy part.",
+		"Well that took long enough,\nbut I'm still not impressed. \n\nLet's see how much control you really have.",
+		"Not bad, not bad at all.\nOh, this one is fun. And deadly.",
+		"Hmm... you seem to have a knack for this. \nOr maybe you're just lucky? Let's find out.",
+		"Wow. You actually made that.\nVery few have made it this far.",
+		"I... I...\n\nYou're not quite like the others.\nMaybe you could... Please, continue.",
+		"Amazing!\nYou may actually do this!\nOkay, listen. We're getting close... just focus!\n\nI have been in here for so long."
 	};
 	#endregion
 }
